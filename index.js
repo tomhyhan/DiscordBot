@@ -23,14 +23,14 @@ client.on('message', async function (message) {
     let count = 1;
     if (subCommand === 'start') {
       while (studying) {
-        message.reply('study time');
-        await sleep(3000);
-        message.reply('break time');
+        message.reply('study time 🚀');
+        await sleep(1500000);
+        message.reply('break time 🙌');
         let res = await fetch('https://api.kanye.rest');
         let quote = await res.json();
         console.log(quote.quote);
         message.reply(`Kanye West: ${quote.quote}`);
-        await sleep(2000);
+        await sleep(300000);
         if (count < 4) {
           message.reply(`Pomodoro round ${count}`);
           studying = await collectMessage(message);
