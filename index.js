@@ -3,7 +3,7 @@ const config = require('./config.json');
 const fetch = require('node-fetch');
 
 const client = new Discord.Client();
-
+const token = process.env.TOKEN || config.BOT_TOKEN;
 const prefix = '!';
 
 client.on('message', async function (message) {
@@ -50,7 +50,7 @@ client.on('message', async function (message) {
   }
 });
 
-client.login(config.BOT_TOKEN);
+client.login(token);
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
